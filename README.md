@@ -4,4 +4,4 @@ task_0 results: [screenshort](https://github.com/kobzarslv/kottans_web_test/blob
 
 task_1 in progress
 
-task_2 will be soon... i hope for this ))
+task_2 [results](https://github.com/kobzarslv/kottans_web_test/tree/master/task_2)
