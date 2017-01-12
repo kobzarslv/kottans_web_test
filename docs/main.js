@@ -51,7 +51,7 @@ $(document).ready(function(){
     function questionFromServer(){
         $.ajax({
             type: "GET",
-            url: "http://jservice.io/api/random",
+            url: "https://jservice.io/api/random",
             success : function(msg){
                 questionFromSer = msg;
             }
