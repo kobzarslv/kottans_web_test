@@ -1,0 +1,36 @@
+<head data-live-domain="jquery.com">
+	<meta charset="utf-8">
+	<title></title>
+	<link href="semantic.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="main.js"></script>
+
+</head>
+<body>
+<div id="header">QUIZ GAME</div>
+<div class = "mainContent">
+    <div class="ui equal width center aligned padded grid" id="score">
+        <div class="two whide column" >Correct Answers  <p class="ui teal mini label" id="correctAnswer">0</p></div>
+        <div class="two whide column" >Total Questions: <p class="ui teal mini label" id="totalQustions">0</p></div>
+    </div>
+    <div> 
+        <div>Question <p class="ui large label" id="question">#</p></div>
+        <div class="ui message"><b id="category">Category: </b></div>
+        <div class="ui message"><b id="quest_describe">Question description :</b></div>
+    </div>
+<div class="fluid ui basic teal  button" id="start_button">Start</div>
+<div id="answer_status">
+    <div  class="ui green message" id="answer_correct">Correct</div>
+    <div  class="ui red message" id="answer_incorrect">Incorrect</div>
+</div>
+<div id="answer_letters"></div>
+<div id="quiz_letters"></div>
+<div class="positive ui button" id="next_button">Next</div>
+</div>
+    
+
+
+
+</body>
