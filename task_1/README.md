@@ -1,3 +1,3 @@
-[Linux Command Line Basics](https://github.com/kobzarslv/kottans_web_test/blob/master/task_1/screen1.png)
-[Configuring Linux Web Servers](https://github.com/kobzarslv/kottans_web_test/blob/master/task_1/screen2.png)
-Networking for Web Developers: working on it...
+1. [Linux Command Line Basics](https://github.com/kobzarslv/kottans_web_test/blob/master/task_1/screen1.png)
+2. [Configuring Linux Web Servers](https://github.com/kobzarslv/kottans_web_test/blob/master/task_1/screen2.png)
+3. Networking for Web Developers: working on it...
