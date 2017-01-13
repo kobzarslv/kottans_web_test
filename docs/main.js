@@ -1,4 +1,7 @@
-var totalQuestions = 0,
+    
+$(document).ready(function(){
+    
+    var totalQuestions = 0,
     correctAnswers = 0,
     answerLength = 0;
     playerAnswer = [];
@@ -9,15 +12,11 @@ var totalQuestions = 0,
         "answer":"",
         "category":""
     };
-    
-$(document).ready(function(){
-    
-    questionFromServer();
-    
+        
     $("#start_button, #next_button").on("click",function(){
-        $("#answer_correct, #answer_incorrect, #next_button").css("display","none");
+        $("#answer_correct, #answer_incorrect, #next_button").removeClass("visible");
         $("#start_button").text("Skip");
-        randomLetters(newAnswer());    
+        questionFromServer();
     }); 
 
     
@@ -31,12 +30,11 @@ $(document).ready(function(){
     });
     
     $("#answer_letters").on("click","p",function(){
-        $("#answer_correct, #answer_incorrect, #next_button").css("display","none");
+        $("#answer_correct, #answer_incorrect, #next_button").removeClass("visible");
         $(this).appendTo("#quiz_letters");
         answerLength++;
     });
-    
-    
+       
     function newAnswer(){
         $("#answer_letters, #quiz_letters").empty();
         totalQuestions +=1;
@@ -54,11 +52,11 @@ $(document).ready(function(){
             url: "https://jservice.io/api/random",
             success : function(msg){
                 questionFromSer = msg;
+                randomLetters(newAnswer());
             }
         });
     }
-     
-    
+       
     function makeNewQuestion (apiQuestion){
         question.id = apiQuestion[0].id;
         question.question = apiQuestion[0].question;
@@ -66,17 +64,15 @@ $(document).ready(function(){
         question.category = apiQuestion[0].category.title;
         answerLength = question.answer.length;
         console.log(question.answer);
-        questionFromServer();
-        
     };
     
     function randomLetters (answer){
         var i=0;
-        answer = answer.split('');
-        while (answer.length){
-        $("#quiz_letters").append("<p id='letters' class='ui blue button'>"+answer.splice(Math.floor(Math.random()*answer.length),1)+"</li>");
-        i++;
-        }        
+        answer = answer.split('').sort();
+        answer.forEach(function(elem){
+            $("#quiz_letters").append("<p class='ui blue button letters'>"+elem+"</li>");
+        })
+
     };
     
     function checkAnswer(){
@@ -86,9 +82,9 @@ $(document).ready(function(){
         if (playerAnswer[0]===question.answer){
         correctAnswers ++;
         $("#correctAnswer").text(correctAnswers);        
-        $("#answer_correct, #next_button").css("display","block");
+        $("#answer_correct, #next_button").addClass("visible");
         } else {
-        $("#answer_incorrect").css("display","block");
+        $("#answer_incorrect").addClass("visible");
         }
     };  
 });
